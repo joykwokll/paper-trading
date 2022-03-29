@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Outlet, Link } from "react-router-dom";
 
-function App() {
+const AppHeader = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <div className="Links">
+          <Link to="/">Home</Link> |{" "}
+          <Link to="/Portfolio">Portfolio</Link> |{" "}
+          <Link to="/Buy">Buy</Link> |{" "}
+          <Link to="/Sell">Sell</Link>
+        </div>
+        <div className="Login">
+          <Link to="/Login">Login</Link> | <Link to="/Register">Register</Link>
+        </div>
+      </div>
+      <div>
+        <Outlet />
+      </div>
+      <style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Acme&family=Londrina+Solid:wght@300;400&display=swap');
+      </style>
     </div>
   );
-}
+};
 
-export default App;
+export default AppHeader;
+
